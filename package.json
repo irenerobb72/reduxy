@@ -1,0 +1,39 @@
+{
+  "name": "reduxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo ./js/main.jsx -t babelify -d --serve bundle.js --live",
+    "build": "browserify ./js/main.jsx  -t babelify -o bundle.js -g uglifyify",
+    "test": "browserify ./test/index.js -t babelify  | mocha --compilers js:babel-core/register",
+    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
+    "push": "gh-pages -d dist",
+    "deploy": "npm run build && npm run dist && npm run push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irenerobb72/reduxy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irenerobb72/reduxy/issues"
+  },
+  "homepage": "https://github.com/irenerobb72/reduxy#readme",
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "budo": "^8.0.4",
+    "chai": "^3.5.0",
+    "enzyme": "^2.0.0",
+    "mocha": "^2.4.5",
+    "react-addons-test-utils": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "smokestack": "^3.4.1",
+    "watchify": "^3.7.0"
+  }
+}
