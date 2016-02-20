@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
-import * as actionCreators from '../action_creators'
+import {products} from './reducer'
 
 export class ProductList extends Component {
   constructor(props) {
     super(props)
   }
   render() {
+    const {products} = this.props
+    const productArray = products.map((r, idx) => {
+      return <Product name={idx} qty:{r} />
+    })
     return (
       <div className="product-list">
-        <div className="productone">{this.props}</div>
+        <h6>{this.props.name}</h6>
       </div>
   )
 }

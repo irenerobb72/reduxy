@@ -10,5 +10,12 @@ import { mount, render, shallow } from 'enzyme'
 import {ProductList} from '../app/components/product-list.jsx'
 
 describe('<ProductList/>', () => {
-  it()
+  it('renders without any props', () => {
+    const wrapper = shallow(<ProductList/>)
+    expect(wrapper).to.be.ok
+  })
+  it('has a className of product-list', () => {
+    const wrapper = shallow(<ProductList/>)
+    expect(wrapper).to.have.className('product-list')
+  })
 })
