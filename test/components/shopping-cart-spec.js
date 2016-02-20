@@ -10,5 +10,8 @@ import { mount, render, shallow } from 'enzyme'
 import {ShoppingCart} from '../app/src/components/shopping-cart.jsx'
 
 describe('<ShoppingCart/>', () => {
-  it()
+  it('renders without any props', () => {
+    const wrapper = shallow(<ShoppingCart/>)
+    expect(wrapper).to.be.ok
+  })
 })

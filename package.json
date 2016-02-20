@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "budo ./js/main.jsx -t babelify -d --serve bundle.js --live",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js \"test/**/*.@(js|jsx)\"",    
     "build": "browserify ./js/main.jsx  -t babelify -o bundle.js -g uglifyify",
     "test": "browserify ./test/index.js -t babelify  | mocha --compilers js:babel-core/register",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
