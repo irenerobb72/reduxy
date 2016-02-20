@@ -18,4 +18,8 @@ describe('<ProductList/>', () => {
     const wrapper = shallow(<ProductList/>)
     expect(wrapper).to.have.className('product-list')
   })
+  it('renders correct name', () => {
+    const wrapper = shallow(<ProductList name='car'/>)
+    expect(wrapper.find('h6')).to.have.text('car')
+  )}
 })
